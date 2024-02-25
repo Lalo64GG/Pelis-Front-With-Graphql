@@ -1,12 +1,12 @@
 import { useMutation } from '@apollo/client';
 
-export const UsePost = (mutation, query) => {
+export const UsePost = (query) => {
 
-    const [mutation, { loading, error}] = useMutation(query);
+    const [createMutation] = useMutation(query);
 
   const createObject = async (input) => {
     try {
-        const { data } = await mutation({
+        const { data } = await createMutation({
             variables: {input}
         }) 
 
@@ -19,7 +19,5 @@ export const UsePost = (mutation, query) => {
 
   return {
     createObject,
-    loading,
-    error
   };
 };

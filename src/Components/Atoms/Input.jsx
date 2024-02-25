@@ -1,8 +1,9 @@
 import React from 'react'
 
-export const Input = ({ type, placeholder, onChange }) => {
+export const Input = ({ type, placeholder, onChange, value }) => {
   return (
     <input
+        value={value}
         type={type}
         placeholder={placeholder}
         onChange={(e) => onChange(e.target.value)}
